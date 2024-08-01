@@ -1,2 +1,2 @@
 # VectorsInC
-Implementation Of C++ Vectors in C
+Implementation of C++ Vectors in C
