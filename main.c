@@ -10,5 +10,11 @@ int main(){
     pop(myVector);
     for(int i = 0; i < myVector->length; i++)
         printf("%d\t", at(myVector, i));
+    printf("\n");
+    printf("%d\t", at(myVector, 5));
+    int* beginPtr = begin(myVector);
+    printf("%d\n", *(beginPtr));
+    int* endPtr = end(myVector);
+    printf("%d\n", *(endPtr));
     return 0;
 }

@@ -36,13 +36,32 @@
     \
     type at(type##Vector* vector, size_t index) { \
         if (index >= vector->length) { \
-            fprintf(stderr, "Index out of bounds\n"); \
+            fprintf(stderr, "INDEX OUT OF BOUNDS\n%zu is out of bounds for length %d!", index, vector->length); \
             exit(1); \
         } \
         return vector->array[index]; \
     } \
     \
     void pop(type##Vector* vector) { \
+        if(vector->length == 0){ \
+            fprintf(stderr, "INDEX OUT OF BOUNDS\nVector is empty!"); \
+            exit(1); \ 
+        } \
         vector->length--; \
     } \
-
+    \
+    type* begin(type##Vector* vector) { \
+        if(vector->length == 0){ \
+            fprintf(stderr, "INDEX OUT OF BOUNDS\nVector is empty!"); \
+            exit(1); \ 
+        } \
+        return &vector->array[0]; \
+    } \
+    \
+    type* end(type##Vector* vector) { \
+        if(vector->length == 0){ \
+            fprintf(stderr, "INDEX OUT OF BOUNDS\nVector is empty!"); \
+            exit(1); \ 
+        } \
+        return &vector->array[vector->length - 1]; \
+    } \
